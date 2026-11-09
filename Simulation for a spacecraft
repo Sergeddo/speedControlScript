@@ -38,7 +38,7 @@ def fsdSpeed():
     m=mass
     Z=impedance
     ν=V/sqrt(f*m*Z)
-    return(ν)
+    return(ν, V, f, m, Z)
     pass
 
 def fsdAcceleration():
