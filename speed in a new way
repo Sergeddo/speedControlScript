@@ -1,8 +1,8 @@
-#travelling back in time is prohibited,
-#add ideas in the comments section, 
-#preferably with a structure mainly written with functions, 
-#backend hardware should always be "symmetrical" to frontend software, 
-#this is just a sketch written in python programming language
+#travelling back in time is prohibited; 
+#add ideas in the comments section;
+#preferably with a structure mainly written with functions;
+#backend hardware should always be "symmetrical" to frontend software;
+#this is just a sketch written in python programming language;
 
 from math import sqrt
 
