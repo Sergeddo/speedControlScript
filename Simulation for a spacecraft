@@ -4,6 +4,8 @@
 #backend hardware should always be "symmetrical" to frontend software, 
 #this is just a sketch written in python programming language
 
+from math import sqrt
+
 def tension(measure1, measure2):
     #from the powerplant unit
     deltaTension=measure2-measure1
