@@ -2,7 +2,7 @@
 #add ideas in the comments section, 
 #preferably with a structure mainly written with functions, 
 #backend hardware should always be "symmetrical" to frontend software, 
-#this is just a sketch
+#this is just a sketch written in python programming language
 
 def tension(measure1, measure2):
     #from the powerplant unit
