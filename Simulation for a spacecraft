@@ -50,12 +50,12 @@ def fsdAcceleration():
     return(deltaν)
     pass
 
-def fsdNablaSpeed():
-    n1=1/sqrt(f*m*Z)
-    n2=-V/(2*f*sqrt(f*m*Z))
-    n3=-V/(2*m*sqrt(f*m*Z))
-    n4=-V/(2*Z*sqrt(f*m*Z))
-    nt=n1+n2+n3+n4
-    return(nt)
+def fsdSpeedDivergence():
+    d1=1/sqrt(f*m*Z)
+    d2=-V/(2*f*sqrt(f*m*Z))
+    d3=-V/(2*m*sqrt(f*m*Z))
+    d4=-V/(2*Z*sqrt(f*m*Z))
+    td=d1+d2+d3+d4
+    return(td)
     pass
     
