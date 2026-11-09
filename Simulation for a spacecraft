@@ -8,44 +8,53 @@ def tension(measure1, measure2):
     #from the powerplant unit
     deltaTension=measure2-measure1
     tension=measure2
-    print(deltaTension, tension)
+    return(deltaTension, tension)
     pass
 
 def frequency(measure1, measure2):
     #from the controls interface
     deltaFrequency=measure2-measure1
     frequency=measure2
-    print(deltaFrequency, frequency)
+    return(deltaFrequency, frequency)
     pass
 
 def mass(measure1, measure2):
     #from the vessel's specifics
     deltaMass=measure2-measure1
     mass=measure2
-    print(deltaMass, mass)
+    return(deltaMass, mass)
     pass
 
 def impedance(measure1, measure2):
     #from the metric control interface unit
     deltaImpedance=measure2-measure1
     impedance=measure2
-    print(deltaImpedance, impedance)
+    return(deltaImpedance, impedance)
     pass
 
-def fsdSpeedControlDisplay():
+def fsdSpeed():
     V=tension
     f=frequency
     m=mass
     Z=impedance
     ν=V/sqrt(f*m*Z)
-    print(ν)
+    return(ν)
     pass
 
-def fsdAccelerationControlDisplay():
+def fsdAcceleration():
     V=deltaTension
     f=deltaFrequency
     m=deltaMass
     Z=deltaImpedance
     deltaν=V/sqrt(f*m*Z)
-    print(deltaν)
+    return(deltaν)
     pass
+
+def fsdNablaOperator():
+    N1=1/sqrt(f*m*Z)
+    N2=-V/(2*f*sqrt(f*m*Z))
+    N3=-V/(2*m*sqrt(f*m*Z))
+    N4=-V/(2*Z*sqrt(f*m*Z))
+    return(N1, N2, N3, N4)
+    pass
+    
