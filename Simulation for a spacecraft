@@ -51,10 +51,11 @@ def fsdAcceleration():
     pass
 
 def fsdNablaOperator():
-    N1=1/sqrt(f*m*Z)
-    N2=-V/(2*f*sqrt(f*m*Z))
-    N3=-V/(2*m*sqrt(f*m*Z))
-    N4=-V/(2*Z*sqrt(f*m*Z))
-    return(N1, N2, N3, N4)
+    n1=1/sqrt(f*m*Z)
+    n2=-V/(2*f*sqrt(f*m*Z))
+    n3=-V/(2*m*sqrt(f*m*Z))
+    n4=-V/(2*Z*sqrt(f*m*Z))
+    oN=n1+n2+n3+n4
+    return(oN)
     pass
     
