@@ -8,49 +8,49 @@ from math import sqrt
 
 def tension(tension1, tension2):
     #from the powerplant unit
-    deltaTension=tension2-tension1
+    dTension=tension2-tension1
     tension=tension2
-    return(deltaTension, tension)
-    pass
+    return(dTension, tension)
 
 def frequency(frequency1, frequency2):
     #from the controls interface
-    deltaFrequency=frequency2-frequency1
+    dFrequency=frequency2-frequency1
     frequency=frequency2
-    return(deltaFrequency, frequency)
-    pass
+    return(dFrequency, frequency)
 
 def mass(mass1, mass2):
     #from the vessel's specifics
-    deltaMass=mass2-mass1
+    dMass=mass2-mass1
     mass=mass2
-    return(deltaMass, mass)
-    pass
+    return(dMass, mass)
 
 def impedance(impedance1, impedance2):
     #from the metric control interface unit
-    deltaImpedance=impedance2-impedance1
+    dImpedance=impedance2-impedance1
     impedance=impedance2
-    return(deltaImpedance, impedance)
-    pass
+    return(dImpedance, impedance)
 
 def speed():
     V=tension
     f=frequency
     m=mass
     Z=impedance
-    ν=V/sqrt(f*m*Z)
-    return(ν, V, f, m, Z)
-    pass
+    if(V==0 or f==0 or m==0 or Z==0):
+        pass
+    else:
+        ν=V/sqrt(f*m*Z)
+        return(ν, V, f, m, Z)
 
 def deltaSpeed():
-    V=deltaTension
-    f=deltaFrequency
-    m=deltaMass
-    Z=deltaImpedance
-    deltaν=V/sqrt(f*m*Z)
-    return(deltaν)
-    pass
+    if(dTension==0 or dFrequency==0 or dMass==0 or dImpedance==0):
+        pass
+    else:
+        dV=deltaTension
+        df=deltaFrequency
+        dm=deltaMass
+        dZ=deltaImpedance
+        dν=dV/sqrt(df*dm*dZ)
+        return(deltaν)
 
 def speedDivergence():
     d1=1/sqrt(f*m*Z)
@@ -59,4 +59,3 @@ def speedDivergence():
     d4=-V/(2*Z*sqrt(f*m*Z))
     td=d1+d2+d3+d4
     return(td)
-    pass    
