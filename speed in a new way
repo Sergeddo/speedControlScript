@@ -6,35 +6,35 @@
 
 from math import sqrt
 
-def tension(measure1, measure2):
+def tension(tension1, tension2):
     #from the powerplant unit
-    deltaTension=measure2-measure1
-    tension=measure2
+    deltaTension=tension2-tension1
+    tension=tension2
     return(deltaTension, tension)
     pass
 
-def frequency(measure1, measure2):
+def frequency(frequency1, frequency2):
     #from the controls interface
-    deltaFrequency=measure2-measure1
-    frequency=measure2
+    deltaFrequency=frequency2-frequency1
+    frequency=frequency2
     return(deltaFrequency, frequency)
     pass
 
-def mass(measure1, measure2):
+def mass(mass1, mass2):
     #from the vessel's specifics
-    deltaMass=measure2-measure1
-    mass=measure2
+    deltaMass=mass2-mass1
+    mass=mass2
     return(deltaMass, mass)
     pass
 
-def impedance(measure1, measure2):
+def impedance(impedance1, impedance2):
     #from the metric control interface unit
-    deltaImpedance=measure2-measure1
-    impedance=measure2
+    deltaImpedance=impedance2-impedance1
+    impedance=impedance2
     return(deltaImpedance, impedance)
     pass
 
-def fsdSpeed():
+def speed():
     V=tension
     f=frequency
     m=mass
@@ -43,7 +43,7 @@ def fsdSpeed():
     return(ν, V, f, m, Z)
     pass
 
-def fsdAcceleration():
+def speedDelta():
     V=deltaTension
     f=deltaFrequency
     m=deltaMass
@@ -52,12 +52,11 @@ def fsdAcceleration():
     return(deltaν)
     pass
 
-def fsdSpeedDivergence():
+def speedDivergence():
     d1=1/sqrt(f*m*Z)
     d2=-V/(2*f*sqrt(f*m*Z))
     d3=-V/(2*m*sqrt(f*m*Z))
     d4=-V/(2*Z*sqrt(f*m*Z))
     td=d1+d2+d3+d4
     return(td)
-    pass
-    
+    pass    
