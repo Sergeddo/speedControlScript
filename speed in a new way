@@ -53,9 +53,9 @@ def deltaSpeed():
         return(deltaν)
 
 def speedDivergence():
-    d1=1/sqrt(f*m*Z)
-    d2=-V/(2*f*sqrt(f*m*Z))
-    d3=-V/(2*m*sqrt(f*m*Z))
-    d4=-V/(2*Z*sqrt(f*m*Z))
-    td=d1+d2+d3+d4
+    pd1=1/sqrt(f*m*Z)
+    pd2=-V/(2*f*sqrt(f*m*Z))
+    pd3=-V/(2*m*sqrt(f*m*Z))
+    pd4=-V/(2*Z*sqrt(f*m*Z))
+    td=pd1+pd2+pd3+pd4
     return(td)
