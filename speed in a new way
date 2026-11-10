@@ -43,7 +43,7 @@ def speed():
     return(ν, V, f, m, Z)
     pass
 
-def speedDelta():
+def deltaSpeed():
     V=deltaTension
     f=deltaFrequency
     m=deltaMass
