@@ -40,7 +40,7 @@ def speed(tension, frequency, mass, impedance):
         ν=V/sqrt(f*m*Z)
         return(ν, V, f, m, Z)
 
-def speedDivergence(V, f, m, Z):
+def speedGradient(V, f, m, Z):
     #from nominalSpeedControlUnit
     if(V==0 or f==0 or m==0 or Z==0):
         pass
@@ -52,7 +52,7 @@ def speedDivergence(V, f, m, Z):
         jdν=pdV+pdf+pdm+pdZ
         return(jdν)
 
-def tensionDivergence(ν, f, m, Z):
+def tensionGradient(ν, f, m, Z):
     #from nominalPowerplantTensionControlUnit
     if(ν==0 or f==0 or m==0 or Z==0):
         pass
