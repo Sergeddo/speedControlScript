@@ -40,18 +40,6 @@ def speed(tension, frequency, mass, impedance):
         ν=V/sqrt(f*m*Z)
         return(ν, V, f, m, Z)
 
-def deltaSpeed(dTension, dFrequency, dMass, dImpedance):
-    #from nominalSpeedControlUnit
-    if(dTension==0 or dFrequency==0 or dMass==0 or dImpedance==0):
-        pass
-    else:
-        dV=dTension
-        df=dFrequency
-        dm=dMass
-        dZ=dImpedance
-        dν=dV/sqrt(df*dm*dZ)
-        return(dν)
-
 def speedDivergence(V, f, m, Z):
     #from nominalSpeedControlUnit
     if(V==0 or f==0 or m==0 or Z==0):
@@ -61,5 +49,17 @@ def speedDivergence(V, f, m, Z):
         pdf=-V/(2*f*sqrt(f*m*Z))
         pdm=-V/(2*m*sqrt(f*m*Z))
         pdZ=-V/(2*Z*sqrt(f*m*Z))
-        td=pdV+pdf+pdm+pdZ
-        return(td)
+        jdν=pdV+pdf+pdm+pdZ
+        return(jdν)
+
+def tensionDivergence(ν, f, m, Z):
+    #from nominalPowerplantTensionControlUnit
+    if(ν==0 or f==0 or m==0 or Z==0):
+        pass
+    else:
+        pdν=sqrt(f*m*Z)
+        pdf=(ν*sqrt(m*Z))/(2*sqrt(f))
+        pdm=(ν*sqrt(f*Z))/(2*sqrt(m))
+        pdZ=(ν*sqrt(f*m))/(2*sqrt(Z))
+        jdV=pdν+pdf+pdm+pdZ
+        return(jdV)
