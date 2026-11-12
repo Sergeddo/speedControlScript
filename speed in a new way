@@ -52,7 +52,7 @@ def deltaSpeed(dTension, dFrequency, dMass, dImpedance):
         dν=dV/sqrt(df*dm*dZ)
         return(dν)
 
-def speedGradient(V, f, m, Z):
+def speedDivergence(V, f, m, Z):
     #for nominalSpeedControlUnit
     if(V==0 or f==0 or m==0 or Z==0):
         pass
@@ -61,10 +61,10 @@ def speedGradient(V, f, m, Z):
         pdf=-V/(2*f*sqrt(f*m*Z))
         pdm=-V/(2*m*sqrt(f*m*Z))
         pdZ=-V/(2*Z*sqrt(f*m*Z))
-        gdν=pdV+pdf+pdm+pdZ
-        return(gdν)
+        divergenceν=pdV+pdf+pdm+pdZ
+        return(divergenceν)
 
-def tensionGradient(ν, f, m, Z):
+def tensionDivergence(ν, f, m, Z):
     #for nominalTensionControlUnit
     if(ν==0 or f==0 or m==0 or Z==0):
         pass
@@ -73,10 +73,10 @@ def tensionGradient(ν, f, m, Z):
         pdf=(ν*sqrt(m*Z))/(2*sqrt(f))
         pdm=(ν*sqrt(f*Z))/(2*sqrt(m))
         pdZ=(ν*sqrt(f*m))/(2*sqrt(Z))
-        gdV=pdν+pdf+pdm+pdZ
-        return(gdV)
+        divergenceV=pdν+pdf+pdm+pdZ
+        return(divergenceV)
 
-def frequencyGradient(ν, V, m, Z):
+def frequencyDivergence(ν, V, m, Z):
     #for nominalFrequencyControlUnit
     if(ν==0 or V==0 or m==0 or Z==0):
         pass
@@ -85,5 +85,5 @@ def frequencyGradient(ν, V, m, Z):
         pdm=-(V**2)/(f**2*Z*ν**2)
         pdZ=-(V**2)/(f*Z**2*ν**2)
         gdν=-(2*V**2)/(f*Z*ν**3)
-        gdf=pdV+pdm+pdZ+gdν
-        return(gdf)
+        divergencef=pdV+pdm+pdZ+gdν
+        return(divergencef)
