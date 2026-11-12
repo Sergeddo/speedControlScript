@@ -5,31 +5,31 @@
 from math import sqrt
 
 def tension(tension1, tension2):
-    #from tensionControlUnit
+    #for tensionControlUnit
     dTension=tension2-tension1
     tension=tension2
     return(dTension, tension)
 
 def frequency(frequency1, frequency2):
-    #from frequencyControlUnit
+    #for frequencyControlUnit
     dFrequency=frequency2-frequency1
     frequency=frequency2
     return(dFrequency, frequency)
 
 def mass(mass1, mass2):
-    #from massControlUnit
+    #for massControlUnit
     dMass=mass2-mass1
     mass=mass2
     return(dMass, mass)
 
 def impedance(impedance1, impedance2):
-    #from impedanceControlUnit
+    #for impedanceControlUnit
     dImpedance=impedance2-impedance1
     impedance=impedance2
     return(dImpedance, impedance)
 
 def speed(tension, frequency, mass, impedance):
-    #from speedControlUnit
+    #for speedControlUnit
     V=tension
     f=frequency
     m=mass
@@ -41,7 +41,7 @@ def speed(tension, frequency, mass, impedance):
         return(ν, V, f, m, Z)
 
 def deltaSpeed(dTension, dFrequency, dMass, dImpedance):
-    #from speedControlUnit
+    #for speedControlUnit
     if(dTension==0 or dFrequency==0 or dMass==0 or dImpedance==0):
         pass
     else:
@@ -53,7 +53,7 @@ def deltaSpeed(dTension, dFrequency, dMass, dImpedance):
         return(dν)
 
 def speedGradient(V, f, m, Z):
-    #from nominalSpeedControlUnit
+    #for nominalSpeedControlUnit
     if(V==0 or f==0 or m==0 or Z==0):
         pass
     else:
@@ -65,7 +65,7 @@ def speedGradient(V, f, m, Z):
         return(gdν)
 
 def tensionGradient(ν, f, m, Z):
-    #from nominalTensionControlUnit
+    #for nominalTensionControlUnit
     if(ν==0 or f==0 or m==0 or Z==0):
         pass
     else:
@@ -77,7 +77,7 @@ def tensionGradient(ν, f, m, Z):
         return(gdV)
 
 def frequencyGradient(ν, V, m, Z):
-    #from nominalFrequencyControlUnit
+    #for nominalFrequencyControlUnit
     if(ν==0 or V==0 or m==0 or Z==0):
         pass
     else:
