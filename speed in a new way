@@ -75,15 +75,3 @@ def tensionDivergence(ν, f, m, Z):
         pdZ=(ν*sqrt(f*m))/(2*sqrt(Z))
         divergenceV=pdν+pdf+pdm+pdZ
         return(divergenceV)
-
-def frequencyDivergence(ν, V, m, Z):
-    #for nominalFrequencyControlUnit
-    if(ν==0 or V==0 or m==0 or Z==0):
-        pass
-    else:
-        pdV=(2*V)/(f*Z*ν**2)
-        pdm=-(V**2)/(f**2*Z*ν**2)
-        pdZ=-(V**2)/(f*Z**2*ν**2)
-        gdν=-(2*V**2)/(f*Z*ν**3)
-        divergencef=pdV+pdm+pdZ+gdν
-        return(divergencef)
