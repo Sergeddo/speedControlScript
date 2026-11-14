@@ -75,3 +75,39 @@ def tensionDivergence(ν, f, m, Z):
         pdZ=(ν*sqrt(f*m))/(2*sqrt(Z))
         divergenceV=pdν+pdf+pdm+pdZ
         return(divergenceV)
+
+def frequencyDivergence(ν, V, m, Z):
+    #for nominalFrequencyControlUnit
+    if(ν==0 or V==0 or m==0 or Z==0):
+        pass
+    else:
+        pdV=(2*V)/(m*Z*ν**2)
+        pdm=-(V**2)/(m**2*Z*ν**2)
+        pdZ=-(V**2)/(m*Z**2*ν**2)
+        gdν=-(2*V**2)/(m*Z*ν**3)
+        divergencef=pdV+pdm+pdZ+gdν
+        return(divergencef)
+
+def massDivergence(ν, V, f, Z):
+    #for nominalMassControlUnit
+    if(ν==0 or V==0 or f==0 or Z==0):
+        pass
+    else:
+        pdV=(2*V)/(f*Z*ν**2)
+        pdf=-(V**2)/(f**2*Z*ν**2)
+        pdZ=-(V**2)/(f*Z**2*ν**2)
+        gdν=-(2*V**2)/(f*Z*ν**3)
+        divergencef=pdV+pdf+pdZ+gdν
+        return(divergencef)
+
+def impedanceDivergence(ν, V, f, m):
+    #for nominalImpedanceControlUnit
+    if(ν==0 or V==0 or f==0 or Z==0):
+        pass
+    else:
+        pdV=(2*V)/(f*m*ν**2)
+        pdf=-(V**2)/(f**2*m*ν**2)
+        pdm=-(V**2)/(f*m**2*ν**2)
+        gdν=-(2*V**2)/(f*m*ν**3)
+        divergenceZ=pdV+pdm+pdf+gdν
+        return(divergenceZ)
