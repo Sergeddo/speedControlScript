@@ -97,8 +97,8 @@ def massDivergence(ν, V, f, Z):
         pdf=-(V**2)/(f**2*Z*ν**2)
         pdZ=-(V**2)/(f*Z**2*ν**2)
         gdν=-(2*V**2)/(f*Z*ν**3)
-        divergencef=pdV+pdf+pdZ+gdν
-        return(divergencef)
+        divergencem=pdV+pdf+pdZ+gdν
+        return(divergencem)
 
 def impedanceDivergence(ν, V, f, m):
     #for nominalImpedanceControlUnit
